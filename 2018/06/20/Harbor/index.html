@@ -207,7 +207,7 @@
 <h1 id="安裝-Certificate"><a href="#安裝-Certificate" class="headerlink" title="安裝 Certificate"></a>安裝 Certificate</h1><p><strong># 修改憑證，需用公司憑證取代</strong></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ubuntu@ubuntu-xenial:~/harbor$ vim /home/ubuntu/cert/registry.08online.xsg.crt</span><br><span class="line">  </span><br><span class="line">ubuntu@ubuntu-xenial:~/harbor$ vim /home/ubuntu/cert/registry.08online.xsg.key</span><br></pre></td></tr></table></figure>
 <p><strong># 修改Docker login需要之憑證</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">ubuntu@ubuntu-xenial:~/harbor$ mkdir /etc/docker/certs.d/registry.08online.xsg/</span><br><span class="line">  </span><br><span class="line">ubuntu@ubuntu-xenial:~/harbor$ vim /etc/docker/certs.d/registry.08online.xsg/ca.crt</span><br><span class="line">  </span><br><span class="line">ubuntu@ubuntu-xenial:~/harbor$ vim /etc/docker/certs.d/registry.08online.xsg/client.cert</span><br><span class="line"></span><br><span class="line">ubuntu@ubuntu-xenial:~/harbor$ vim /etc/docker/certs.d/registry.08online.xsg/client.key</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">ubuntu@ubuntu-xenial:~/harbor$ mkdir -p /etc/docker/certs.d/registry.08online.xsg/</span><br><span class="line">  </span><br><span class="line">ubuntu@ubuntu-xenial:~/harbor$ vim /etc/docker/certs.d/registry.08online.xsg/ca.crt</span><br><span class="line">  </span><br><span class="line">ubuntu@ubuntu-xenial:~/harbor$ vim /etc/docker/certs.d/registry.08online.xsg/client.cert</span><br><span class="line"></span><br><span class="line">ubuntu@ubuntu-xenial:~/harbor$ vim /etc/docker/certs.d/registry.08online.xsg/client.key</span><br></pre></td></tr></table></figure>
 <p><strong># 測試登入</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ubuntu@ubuntu-xenial:~/harbor$ docker login registry.08online.xsg</span><br></pre></td></tr></table></figure></p>
 <p>帳號：admin</p>
 <p>密碼：xxxxxx</p>
@@ -422,7 +422,7 @@
         </div>
         
         
-        <div class="cube-box-bg ">
+        <div class="cube-box ">
             <a href="/tags/Harbor/">#Harbor</a>
         </div>
         
