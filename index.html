@@ -161,6 +161,46 @@
     <div class="cube-content">
         <div class="cube-left">
             
+<div class="cube-excerpt" id="cube-excerpt-Portainer-Remote">
+    <header class="cube-excerpt-header">
+        <h1><a href="/2018/07/24/Portainer-Remote/">Portainer-Remote</a></h1>
+        <div class="cube-excerpt-header-msg">
+            <div class="cube-excerpt-date">
+                <i class="cube-icon cube-icon-date" aria-hidden="true"></i>
+                2018-07-24
+            </div>
+            <div class="cube-excerpt-tags">
+                <i class="cube-icon cube-icon-tag" aria-hidden="true"></i>
+                
+                <a href="/tags/Portainer/" class="cube-excerpt-tag-link">#Portainer</a>
+                
+            </div>
+        </div>
+    </header>
+    <article class="cube-excerpt-entry cube-markdown">
+        
+        
+           <h1 id="Portainer-安裝"><a href="#Portainer-安裝" class="headerlink" title="Portainer 安裝"></a><strong>Portainer 安裝</strong></h1><p><strong># 安裝Docker</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install -y docker.io</span><br></pre></td></tr></table></figure></p>
+<p><strong># 下載Image</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull portainer/portainer</span><br></pre></td></tr></table></figure></p>
+<p><strong># 創建volume</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker volume create portainer_data</span><br></pre></td></tr></table></figure></p>
+<p><strong># 安裝Portainer</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -d -p 9000:9000 --restart=always --name portainer -v /var/run/docker.sock:/var/run/docker.sock portainer/portainer</span><br></pre></td></tr></table></figure></p>
+<p>此處 9000:9000 可自行修改，第一個為Host Port，第二個為Container Port</p>
+<p><strong># UI設定</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://localhost:9000</span><br></pre></td></tr></table></figure></p>
+<p><strong># 設定密碼</strong><br><img src="https://i.imgur.com/LPcVhDG.png" alt=""></p>
+<p><strong># 選擇Remote</strong><br><img src="https://i.imgur.com/2iYwvdk.png" alt=""></p>
+<p>輸入機器名稱與機器IP，此處 Port:2375 需打開</p>
+<p>開啟方式</p>
+<p>CentOS 7：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">vim /usr/lib/systemd/system/docker.service</span><br><span class="line"></span><br><span class="line">[Service]</span><br><span class="line">ExecStart=</span><br><span class="line">ExecStart=/usr/bin/dockerd -H tcp://0.0.0.0:2375 -H unix://var/run/docker.sock</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">systemctl daemon-reload</span><br><span class="line"></span><br><span class="line">systemctl restart docker</span><br></pre></td></tr></table></figure></p>
+<p>Ubuntu 16.04：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/default/docker</span><br><span class="line"></span><br><span class="line">DOCKER_OPTS=&quot;-H tcp://0.0.0.0:2375&quot;</span><br><span class="line"></span><br><span class="line">service docker restart</span><br></pre></td></tr></table></figure></p>
+<p>查詢是否成功開啟可用此指令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netstat -tulp</span><br></pre></td></tr></table></figure></p>
+
+        
+    </article>
+    <footer class="cube-excerpt-footer">
+        <a class="cube-excerpt-more" href="/2018/07/24/Portainer-Remote/">Read More</a>
+    </footer>
+</div>
+
 <div class="cube-excerpt" id="cube-excerpt-Gitea">
     <header class="cube-excerpt-header">
         <h1><a href="/2018/07/13/Gitea/">Gitea</a></h1>
@@ -397,8 +437,8 @@
     
     
     <div class="count">
-        <a class="count articles"><span>6</span>Article</a>
-        <a class="count tags"><span>5</span>Tags</a>
+        <a class="count articles"><span>7</span>Article</a>
+        <a class="count tags"><span>6</span>Tags</a>
         <a class="count categories"><span>1</span>Categories</a>
     </div>
 </div>
@@ -436,7 +476,7 @@
                     <span>1</span>
                 </p>
                 <p class="title">
-                    <a href="/2018/07/13/Gitea/" title="Gitea">Gitea</a>
+                    <a href="/2018/07/24/Portainer-Remote/" title="Portainer-Remote">Portainer-Remote</a>
                 </p>
             </div>
             
@@ -450,7 +490,7 @@
                     <span>2</span>
                 </p>
                 <p class="title">
-                    <a href="/2018/07/02/Helm/" title="Helm">Helm</a>
+                    <a href="/2018/07/13/Gitea/" title="Gitea">Gitea</a>
                 </p>
             </div>
         </li>
@@ -463,7 +503,7 @@
                     <span>3</span>
                 </p>
                 <p class="title">
-                    <a href="/2018/06/29/Ubuntu-基礎設定/" title="Ubuntu 網路設定">Ubuntu 網路設定</a>
+                    <a href="/2018/07/02/Helm/" title="Helm">Helm</a>
                 </p>
             </div>
         </li>
@@ -476,7 +516,7 @@
                     <span>4</span>
                 </p>
                 <p class="title">
-                    <a href="/2018/06/20/Harbor/" title="Harbor">Harbor</a>
+                    <a href="/2018/06/29/Ubuntu-基礎設定/" title="Ubuntu 網路設定">Ubuntu 網路設定</a>
                 </p>
             </div>
         </li>
@@ -489,7 +529,7 @@
                     <span>5</span>
                 </p>
                 <p class="title">
-                    <a href="/2018/06/19/Prometheus/" title="Prometheus">Prometheus</a>
+                    <a href="/2018/06/20/Harbor/" title="Harbor">Harbor</a>
                 </p>
             </div>
         </li>
@@ -523,28 +563,33 @@
     <div class="cube-boxs">
         
         
-        <div class="cube-box-bg ">
-            <a href="/tags/Git/">#Git</a>
+        <div class="cube-box ">
+            <a href="/tags/Portainer/">#Portainer</a>
         </div>
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
+            <a href="/tags/Helm/">#Helm</a>
+        </div>
+        
+        
+        <div class="cube-box-bg ">
             <a href="/tags/Prometheus/">#Prometheus</a>
         </div>
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/tags/Harbor/">#Harbor</a>
         </div>
         
         
         <div class="cube-box ">
-            <a href="/tags/Helm/">#Helm</a>
+            <a href="/tags/Ubuntu/">#Ubuntu</a>
         </div>
         
         
-        <div class="cube-box ">
-            <a href="/tags/Ubuntu/">#Ubuntu</a>
+        <div class="cube-box-bg ">
+            <a href="/tags/Git/">#Git</a>
         </div>
         
     </div>
