@@ -180,6 +180,7 @@
     <div class="cube-article-content cube-markdown">
         
         <h1 id="Portainer-安裝"><a href="#Portainer-安裝" class="headerlink" title="Portainer 安裝"></a><strong>Portainer 安裝</strong></h1><p><strong># 安裝Docker</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install -y docker.io</span><br></pre></td></tr></table></figure></p>
+<a id="more"></a>
 <p><strong># 下載Image</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull portainer/portainer</span><br></pre></td></tr></table></figure></p>
 <p><strong># 創建volume</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker volume create portainer_data</span><br></pre></td></tr></table></figure></p>
 <p><strong># 安裝Portainer</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -d -p 9000:9000 --restart=always --name portainer -v /var/run/docker.sock:/var/run/docker.sock portainer/portainer</span><br></pre></td></tr></table></figure></p>
@@ -378,12 +379,12 @@
     <div class="cube-boxs">
         
         
-        <div class="cube-box-bg ">
+        <div class="cube-box ">
             <a href="/tags/Portainer/">#Portainer</a>
         </div>
         
         
-        <div class="cube-box-bg ">
+        <div class="cube-box ">
             <a href="/tags/Helm/">#Helm</a>
         </div>
         
@@ -403,7 +404,7 @@
         </div>
         
         
-        <div class="cube-box-bg ">
+        <div class="cube-box ">
             <a href="/tags/Git/">#Git</a>
         </div>
         

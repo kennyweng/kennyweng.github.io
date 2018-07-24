@@ -181,19 +181,6 @@
         
         
            <h1 id="Portainer-安裝"><a href="#Portainer-安裝" class="headerlink" title="Portainer 安裝"></a><strong>Portainer 安裝</strong></h1><p><strong># 安裝Docker</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install -y docker.io</span><br></pre></td></tr></table></figure></p>
-<p><strong># 下載Image</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull portainer/portainer</span><br></pre></td></tr></table></figure></p>
-<p><strong># 創建volume</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker volume create portainer_data</span><br></pre></td></tr></table></figure></p>
-<p><strong># 安裝Portainer</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -d -p 9000:9000 --restart=always --name portainer -v /var/run/docker.sock:/var/run/docker.sock portainer/portainer</span><br></pre></td></tr></table></figure></p>
-<p>此處 9000:9000 可自行修改，第一個為Host Port，第二個為Container Port</p>
-<p><strong># UI設定</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://localhost:9000</span><br></pre></td></tr></table></figure></p>
-<p><strong># 設定密碼</strong><br><img src="https://i.imgur.com/LPcVhDG.png" alt=""></p>
-<p><strong># 選擇Remote</strong><br><img src="https://i.imgur.com/2iYwvdk.png" alt=""></p>
-<p>輸入機器名稱與機器IP，此處 Port:2375 需打開</p>
-<p>開啟方式</p>
-<p>CentOS 7：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">vim /usr/lib/systemd/system/docker.service</span><br><span class="line"></span><br><span class="line">[Service]</span><br><span class="line">ExecStart=</span><br><span class="line">ExecStart=/usr/bin/dockerd -H tcp://0.0.0.0:2375 -H unix://var/run/docker.sock</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">systemctl daemon-reload</span><br><span class="line"></span><br><span class="line">systemctl restart docker</span><br></pre></td></tr></table></figure></p>
-<p>Ubuntu 16.04：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/default/docker</span><br><span class="line"></span><br><span class="line">DOCKER_OPTS=&quot;-H tcp://0.0.0.0:2375&quot;</span><br><span class="line"></span><br><span class="line">service docker restart</span><br></pre></td></tr></table></figure></p>
-<p>查詢是否成功開啟可用此指令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netstat -tulp</span><br></pre></td></tr></table></figure></p>
-
         
     </article>
     <footer class="cube-excerpt-footer">
@@ -547,7 +534,7 @@
     <div class="cube-boxs">
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/categories/DevOps/">#DevOps</a>
         </div>
         
@@ -563,22 +550,22 @@
     <div class="cube-boxs">
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/tags/Portainer/">#Portainer</a>
         </div>
         
         
-        <div class="cube-box-bg ">
+        <div class="cube-box ">
             <a href="/tags/Helm/">#Helm</a>
         </div>
         
         
-        <div class="cube-box-bg ">
+        <div class="cube-box ">
             <a href="/tags/Prometheus/">#Prometheus</a>
         </div>
         
         
-        <div class="cube-box-bg ">
+        <div class="cube-box ">
             <a href="/tags/Harbor/">#Harbor</a>
         </div>
         
